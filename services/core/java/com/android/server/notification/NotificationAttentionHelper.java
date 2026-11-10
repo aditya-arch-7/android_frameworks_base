@@ -1081,6 +1081,9 @@ public final class NotificationAttentionHelper {
     }
 
     void updateLightsLocked() {
+        if (mLineageNotificationLights == null) {
+            return;
+        }
         // handle notification lights
         NotificationRecord ledNotification = null;
         while (ledNotification == null && !mLights.isEmpty()) {
